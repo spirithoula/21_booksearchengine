@@ -4,14 +4,34 @@
   "description": "",
   "main": "server/server.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" & exit 1",
     "start": "node server/server.js",
+    "start:prod": "cd server && npm start",
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
-    "build": "cd client && npm run build"
+    "build": "cd client && npm run build",
+    "seed": "cd server && npm run seed",
+    "heroku-postbuild": "cd client && npm run build"
   },
+  "engines": {
+    "node": "14.16.x",
+    "npm": "7.20.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@work.github.com:spirithoula/21_booksearchengine"
+  },
+    
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs":{
+    "url": "https://github.com/spirithoula/21_booksearchengine"
+  },
+  "homepage": "https://github.com/spirithoula/21_booksearchengine#readme",
+  "dependencies": {
+    "if-env": "^1.0.4"
+  },
   "devDependencies": {
     "concurrently": "^5.1.0"
   }
